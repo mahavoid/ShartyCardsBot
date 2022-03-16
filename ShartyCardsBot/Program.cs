@@ -26,13 +26,14 @@ namespace ShartyCardsBot
 
         static IPictureGenerator PictureGenerator;
 
-        static void Main(string[] args)
+        static void Main()
         {
             initializeDependancies();
+            initializeBot();
 
             while (true)
             {
-                Thread.Sleep(30 * 60 * 1000);
+                Thread.Sleep(1 * 60 * 1000);
             }
         }
 
