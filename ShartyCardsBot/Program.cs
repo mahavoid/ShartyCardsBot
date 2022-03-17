@@ -108,7 +108,9 @@ namespace ShartyCardsBot
             PictureGenerationOptions pgo = new PictureGenerationOptions(update);
             InputOnlineFile iof = PictureGenerator.Generate(pgo);
 
-            await botClient.SendPhotoAsync(update.Message.Chat.Id, iof, replyToMessageId: update.Id);
+            await botClient.SendPhotoAsync(update.Message.Chat.Id, iof, replyToMessageId: update.Message.MessageId);
+
+            await iof.Content.DisposeAsync();
         }
     }
 }
